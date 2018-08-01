@@ -8,11 +8,19 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: DetailsCollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.addHeader(with: "Hajj Hackathon 2018")
+        self.addDetails(with: "Key", and: "Value")
+        self.addPersonCell(name: "Omar", image:UIImage(named: "profile")!)
+        self.addButtonCell(title: "Button Test", color: UIColor.blue, titleColor: UIColor.white) {
+            //
+        }
+        
+        self.addEmptyCell()
     }
 
     override func didReceiveMemoryWarning() {
