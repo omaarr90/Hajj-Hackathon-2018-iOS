@@ -21,14 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NetworkActivityLogger.shared.level = .debug
         NetworkActivityLogger.shared.startLogging()
         
-        ApiManager.shared.login("admin", withPassword: "123") { (user, error) in
-            //
-            if let _ = user {
-                print("Recived User \(String(describing: user))")
-            } else {
-                print("Recived Error \(error!)")
-            }
-        }
         return true
     }
 

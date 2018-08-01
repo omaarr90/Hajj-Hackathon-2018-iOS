@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4C119D9F2111C7FA00F0536A /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C119D9E2111C7FA00F0536A /* NetworkHelper.swift */; };
+		4C119DA52111D25C00F0536A /* FoodItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C119DA32111D25C00F0536A /* FoodItemCollectionViewCell.swift */; };
+		4C119DA62111D25C00F0536A /* FoodItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C119DA42111D25C00F0536A /* FoodItemCollectionViewCell.xib */; };
+		4C119DA9211215A500F0536A /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C119DA8211215A500F0536A /* LandingViewController.swift */; };
 		4C703AD32110EF5800A25563 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C703AD22110EF5800A25563 /* AppDelegate.swift */; };
 		4C703AD52110EF5800A25563 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C703AD42110EF5800A25563 /* ViewController.swift */; };
 		4C703AD82110EF5800A25563 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C703AD62110EF5800A25563 /* Main.storyboard */; };
@@ -35,6 +38,9 @@
 
 /* Begin PBXFileReference section */
 		4C119D9E2111C7FA00F0536A /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		4C119DA32111D25C00F0536A /* FoodItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		4C119DA42111D25C00F0536A /* FoodItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodItemCollectionViewCell.xib; sourceTree = "<group>"; };
+		4C119DA8211215A500F0536A /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		4C703ACF2110EF5800A25563 /* Hajj-Hackathon-2018.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hajj-Hackathon-2018.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C703AD22110EF5800A25563 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C703AD42110EF5800A25563 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +104,23 @@
 			children = (
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		4C119DA22111D24000F0536A /* Vending Machine Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4C119DA32111D25C00F0536A /* FoodItemCollectionViewCell.swift */,
+				4C119DA42111D25C00F0536A /* FoodItemCollectionViewCell.xib */,
+			);
+			path = "Vending Machine Cells";
+			sourceTree = "<group>";
+		};
+		4C119DA72112158900F0536A /* Landing */ = {
+			isa = PBXGroup;
+			children = (
+				4C119DA8211215A500F0536A /* LandingViewController.swift */,
+			);
+			path = Landing;
 			sourceTree = "<group>";
 		};
 		4C703AC62110EF5800A25563 = {
@@ -168,6 +191,7 @@
 		4C703B062111B2E200A25563 /* User Story */ = {
 			isa = PBXGroup;
 			children = (
+				4C119DA72112158900F0536A /* Landing */,
 				4C703B072111B56F00A25563 /* Vending Machine */,
 			);
 			path = "User Story";
@@ -176,6 +200,7 @@
 		4C703B072111B56F00A25563 /* Vending Machine */ = {
 			isa = PBXGroup;
 			children = (
+				4C119DA22111D24000F0536A /* Vending Machine Cells */,
 				4C703B082111B5D000A25563 /* VendingMachineCollectionViewController.swift */,
 			);
 			path = "Vending Machine";
@@ -262,6 +287,7 @@
 				4C703B002111A68400A25563 /* ButtonCollectionViewCell.xib in Resources */,
 				4C703B052111AD2100A25563 /* Icons.xcassets in Resources */,
 				4C703AFF2111A68400A25563 /* EmptyCollectionViewCell.xib in Resources */,
+				4C119DA62111D25C00F0536A /* FoodItemCollectionViewCell.xib in Resources */,
 				4C703ADD2110EF5900A25563 /* LaunchScreen.storyboard in Resources */,
 				4C703B022111A68400A25563 /* PerosnCollectionViewCell.xib in Resources */,
 				4C703ADA2110EF5900A25563 /* Assets.xcassets in Resources */,
@@ -342,6 +368,7 @@
 			files = (
 				4C119D9F2111C7FA00F0536A /* NetworkHelper.swift in Sources */,
 				4C703B112111BCD200A25563 /* User.swift in Sources */,
+				4C119DA9211215A500F0536A /* LandingViewController.swift in Sources */,
 				4C703AD52110EF5800A25563 /* ViewController.swift in Sources */,
 				4C703AF32111A5C600A25563 /* LabelCollectionViewCell.swift in Sources */,
 				4C703AED2111A5BA00A25563 /* DetailsCollectionViewController.swift in Sources */,
@@ -349,6 +376,7 @@
 				4C703B0E2111BA3500A25563 /* ApiManager.swift in Sources */,
 				4C703B092111B5D000A25563 /* VendingMachineCollectionViewController.swift in Sources */,
 				4C703AD32110EF5800A25563 /* AppDelegate.swift in Sources */,
+				4C119DA52111D25C00F0536A /* FoodItemCollectionViewCell.swift in Sources */,
 				4C703AEC2111A5BA00A25563 /* DetailsViewModel.swift in Sources */,
 				4C703AFE2111A68400A25563 /* EmptyCollectionViewCell.swift in Sources */,
 				4C703AFD2111A68400A25563 /* DetailsBaseCollectionViewCell.swift in Sources */,
