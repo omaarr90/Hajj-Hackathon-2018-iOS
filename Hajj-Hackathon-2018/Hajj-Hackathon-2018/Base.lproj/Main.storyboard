@@ -49,25 +49,17 @@
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="52m-z2-Qfg">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </view>
-                            </collectionViewCell>
-                        </cells>
+                        <cells/>
                         <connections>
                             <outlet property="dataSource" destination="Pfb-9f-c4m" id="0KO-3s-EJi"/>
                             <outlet property="delegate" destination="Pfb-9f-c4m" id="eux-fu-jMa"/>
                         </connections>
                     </collectionView>
+                    <navigationItem key="navigationItem" id="GEw-0F-fng"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BNi-fA-L31" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1073" y="899"/>
+            <point key="canvasLocation" x="1073" y="896"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Hsc-k2-bnc">
@@ -86,6 +78,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FmZ-Tp-moE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="133.59999999999999" y="133.5832083958021"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="esB-yv-zdR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8Mt-2r-oBP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="BNu-1l-aW0">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Pfb-9f-c4m" kind="relationship" relationship="rootViewController" id="Yaz-zq-Cs7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o0y-fS-K1b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="134" y="897"/>
         </scene>
     </scenes>
 </document>

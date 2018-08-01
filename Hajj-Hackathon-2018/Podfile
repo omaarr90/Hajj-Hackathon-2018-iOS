@@ -1,0 +1,12 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Hajj-Hackathon-2018' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Hajj-Hackathon-2018
+  pod 'HermesNetwork'
+  pod 'AlamofireNetworkActivityLogger', '~> 2.3'
+  
+end

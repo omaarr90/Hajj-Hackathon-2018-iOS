@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireNetworkActivityLogger
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        NetworkActivityLogger.shared.level = .debug
+        NetworkActivityLogger.shared.startLogging()
+        
+        ApiManager.shared.login("admin", withPassword: "123") { (user, error) in
+            //
+            if let _ = user {
+                print("Recived User \(String(describing: user))")
+            } else {
+                print("Recived Error \(error!)")
+            }
+        }
         return true
     }
 
