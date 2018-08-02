@@ -54,25 +54,14 @@ class SupplyFoodViewController: UIViewController {
  var calories: Int
  var weight: Int
 */
-        let nameAr: NSString = "Test 1"
-        let NameEn: NSString = "Test En 1"
-        let type: NSString = "Type 1"
-        let timeStamp: NSNumber = 1213
-        let vmId: NSNumber = 1
-        let picturURL: NSString = "https://storage.googleapis.com/hajj_hackathon/1.png"
-        let cal: NSNumber = 100
-        let weight: NSNumber = 200
-
-        let foodItem = FoodItem(nameAr, nameEn: NameEn, type: type, timestamp: timeStamp, customerId: 2, vmId: vmId, pictureUrl: picturURL, calories: cal, weight: weight)
-        
-        self.foodList.add(foodItem)
 
         
-//        let diceRoll = Int(arc4random_uniform(8) + 1)
-//        for _ in 0...5 {
-//            let foodItem = FoodItem(MealConstants.mealsItemAr[diceRoll] as NSString, nameEn: MealConstants.mealsItemEn[diceRoll] as NSString, type: MealConstants.mealTypes[diceRoll] as NSString, timestamp: NSNumber(integerLiteral: 5), customerId: nil, vmId: self.vendingMachine!.id, pictureUrl: MealConstants.mealUrls[diceRoll] as NSString, calories: NSNumber(integerLiteral: MealConstants.mealCals[diceRoll]), weight: NSNumber(integerLiteral: MealConstants.mealweights[diceRoll]))
-//            self.foodList.add(foodItem)
-//        }
+        for _ in 0...5 {
+            let diceRoll = Int(arc4random_uniform(8) + 1)
+
+            let foodItem = FoodItem(MealConstants.mealsItemAr[diceRoll] as NSString, nameEn: MealConstants.mealsItemEn[diceRoll] as NSString, type: MealConstants.mealTypes[diceRoll] as NSString, timestamp: NSNumber(integerLiteral: 5), customerId: nil, vmId: self.vendingMachine!.id, pictureUrl: MealConstants.mealUrls[diceRoll] as NSString, calories: NSNumber(integerLiteral: MealConstants.mealCals[diceRoll]), weight: NSNumber(integerLiteral: MealConstants.mealweights[diceRoll]))
+            self.foodList.add(foodItem.toDict())
+        }
     }
 
 }

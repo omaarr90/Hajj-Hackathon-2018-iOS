@@ -8,14 +8,41 @@
 
 import UIKit
 import CoreLocation
+import StatefulViewController
 
 private let reuseIdentifier = "FoodItemCollectionViewCell"
 
-class VendingMachineCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, CLLocationManagerDelegate {
+class VendingMachineCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, CLLocationManagerDelegate, StatefulViewController {
     
     var vendingMachine: VendingMachine!
     var locationManager: CLLocationManager!
     
+    var hajjLoadingView: UILabel {
+        get {
+            let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
+            label.text = "Loading...."
+            label.textAlignment = .center
+            return label
+        }
+    }
+
+    var hajjErrorView: UILabel {
+        get {
+            let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
+            label.text = "An Error Occured"
+            label.textAlignment = .center
+            return label
+        }
+    }
+
+    var hajjEmptyView: UILabel {
+        get {
+            let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
+            label.text = "No Food At The Moment"
+            label.textAlignment = .center
+            return label
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,12 +63,26 @@ class VendingMachineCollectionViewController: UICollectionViewController, UIColl
         self.locationManager.delegate = self;
         self.locationManager.distanceFilter = kCLDistanceFilterNone;
         self.locationManager.startUpdatingLocation()
+        
+        loadingView = self.hajjLoadingView
+        errorView = self.hajjErrorView
+        emptyView = self.hajjEmptyView
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        setupInitialViewState()
     }
     
     @objc func showSupplyPage() {
         self.performSegue(withIdentifier: "showSupplyPage", sender: self)
     }
     
+    func hasContent() -> Bool {
+        return self.vendingMachine.foodList.count > 0
+    }
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -69,7 +110,7 @@ extension VendingMachineCollectionViewController {
     
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return self.vendingMachine.foodList.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

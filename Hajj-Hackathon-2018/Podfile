@@ -9,5 +9,6 @@ target 'Hajj-Hackathon-2018' do
   pod 'HermesNetwork'
   pod 'AlamofireNetworkActivityLogger', '~> 2.3'
   pod 'SwiftKeychainWrapper'
+  pod 'StatefulViewController'
   
 end

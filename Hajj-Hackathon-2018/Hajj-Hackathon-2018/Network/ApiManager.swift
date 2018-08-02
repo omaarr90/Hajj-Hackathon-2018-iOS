@@ -65,16 +65,15 @@ extension ApiManager {
     func supplyMachine(_ foodItems: NSArray, machineID: NSNumber, completion: @escaping (Bool) -> Void) {
         let op: JSONOperation<Bool> = JSONOperation<Bool>()
         
+//        let array: NSArray = ["Omar", "Ahmed"]
         let jsonDict: NSDictionary = ["vmId": machineID, "foodList": foodItems]
-        let a = JSONSerialization.isValidJSONObject(jsonDict)
         let jsonData = try! JSONSerialization.data(withJSONObject: jsonDict, options: [])
 //        let body = RequestBody.json(["vmId": machineID, "foodList": foodItems])
         let body = RequestBody.raw(data: jsonData)
         op.request = Request(method: .post, endpoint: "/vm/supply", params: nil, fields: nil, body: body)
         
-        let token = KeychainHelper.shared.getUserToken()
-        op.request?.headers = ["Authorization": "Bearer \(token!)"]
-        op.request?.headers = ["Content-Type": "application/json"]
+        let token = KeychainHelper.shared.getUserToken()!
+        op.request?.headers = ["Content-Type": "application/json", "Authorization": "Bearer \(token)"]
         op.onParseResponse = { _ in
             return true
         }
