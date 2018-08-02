@@ -1,5 +1,5 @@
 //
-//  VendingMachineCollectionViewController.swift
+//  SelectMachineViewController.swift
 //  Hajj-Hackathon-2018
 //
 //  Created by Omar Alshammari on 01/08/2018.
@@ -7,80 +7,91 @@
 //
 
 import UIKit
-import CoreLocation
 
-private let reuseIdentifier = "FoodItemCollectionViewCell"
+private let reuseIdentifier = "VendingMachineCollectionViewCell"
 
-class VendingMachineCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, CLLocationManagerDelegate {
+class SelectMachineViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    var vendingMachine: VendingMachine!
-    var locationManager: CLLocationManager!
-    
+    var vendingMachines: [VendingMachine]?
+    var selectedVendingMachine: VendingMachine?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Do any additional setup after loading the view.
-        let foodItemCellNib = UINib(nibName: "FoodItemCollectionViewCell", bundle: Bundle.main)
-        self.collectionView?.register(foodItemCellNib, forCellWithReuseIdentifier: "FoodItemCollectionViewCell")
         
-        let supplyButton = UIBarButtonItem(title: "Supply", style: .done, target: self, action: #selector(showSupplyPage))
-        self.navigationItem.rightBarButtonItem = supplyButton
+        self.title = "Select Vending Machine"
+        self.loadAllMachines()
         
-        self.title = "Foods"
-        
-        self.locationManager = CLLocationManager()
-        self.locationManager.delegate = self;
-        self.locationManager.distanceFilter = kCLDistanceFilterNone;
-        self.locationManager.startUpdatingLocation()
+        let vendingMachineCellNib = UINib(nibName: "VendingMachineCollectionViewCell", bundle: Bundle.main)
+        self.collectionView?.register(vendingMachineCellNib, forCellWithReuseIdentifier: "VendingMachineCollectionViewCell")        
     }
     
-    @objc func showSupplyPage() {
-        self.performSegue(withIdentifier: "showSupplyPage", sender: self)
+    func loadAllMachines() {
+        ApiManager.shared.getAllMachines { (vendingMachines, error) in
+            if let _ = error {
+                // handle Error
+            } else {
+                self.vendingMachines = vendingMachines
+                self.collectionView?.reloadData()
+            }
+        }
     }
-    
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
+        // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if let destinationVC = segue.destination as? SupplyFoodViewController {
-            destinationVC.vendingMachine = self.vendingMachine
+        
+        if let destiationNavVC = segue.destination as? UINavigationController, let destinationVC = destiationNavVC.viewControllers.first as? VendingMachineCollectionViewController {
+            destinationVC.vendingMachine = self.selectedVendingMachine
         }
     }
-    
-    @objc func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let location = locations[locations.count - 1]
-        
-        ApiManager.shared.updateLocation(self.vendingMachine.id, lat: NSNumber(value: location.coordinate.latitude), lon: NSNumber(value: location.coordinate.longitude))
-    }
+
 }
 
-extension VendingMachineCollectionViewController {
-    // MARK: UICollectionViewDataSource
-    
+extension SelectMachineViewController
+{
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return self.vendingMachines?.count ?? 0
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! VendingMachineCollectionViewCell
         
+        cell.titleLabel.text = self.vendingMachines![indexPath.item].name as String
+        cell.contentView.backgroundColor = .orange
         // Configure the cell
         
         return cell
     }
     
     // MARK: UICollectionViewDelegate
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.selectedVendingMachine = self.vendingMachines![indexPath.item]
+        
+        
+        ApiManager.shared.login("vm", withPassword: "123") { (user, error) in
+            //
+            if let _ = user {
+                print("Recived User \(String(describing: user))")
+                //save user token
+                KeychainHelper.shared.saveUserToken(user!.token!)
+                // show next page
+                self.performSegue(withIdentifier: "showVendingMachine", sender: self)
+            } else {
+                print("Recived Error \(error!)")
+                //showErrorPage
+                KeychainHelper.shared.deleteUserToken()
+            }
+        }
+    }
     
     /*
      // Uncomment this method to specify if the specified item should be highlighted during tracking
@@ -113,7 +124,7 @@ extension VendingMachineCollectionViewController {
     
     // MARK: UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = (self.view.frame.size.width / 2) - 20
+        let width = (self.view.frame.size.width) - 20
         return CGSize(width: width, height: 200)
     }
     

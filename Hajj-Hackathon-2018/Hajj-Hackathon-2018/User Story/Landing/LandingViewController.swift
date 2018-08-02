@@ -8,22 +8,13 @@
 
 import UIKit
 
-class LandingViewController: UIViewController {
 
+class LandingViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        ApiManager.shared.login("vm", withPassword: "123") { (user, error) in
-            //
-            if let _ = user {
-                print("Recived User \(String(describing: user))")
-                //save user token
-            } else {
-                print("Recived Error \(error!)")
-                //showErrorPage
-            }
-        }
+        
     }
 
     override func didReceiveMemoryWarning() {

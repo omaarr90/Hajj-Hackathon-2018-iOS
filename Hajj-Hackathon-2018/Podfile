@@ -8,5 +8,6 @@ target 'Hajj-Hackathon-2018' do
   # Pods for Hajj-Hackathon-2018
   pod 'HermesNetwork'
   pod 'AlamofireNetworkActivityLogger', '~> 2.3'
+  pod 'SwiftKeychainWrapper'
   
 end

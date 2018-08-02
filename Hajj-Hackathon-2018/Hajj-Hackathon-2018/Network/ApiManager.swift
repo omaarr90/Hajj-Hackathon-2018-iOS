@@ -11,8 +11,10 @@ import Foundation
 import HermesNetwork
 import Alamofire
 import Hydra
+import SwiftyJSON
 
 class ApiManager {
+    
     public static let shared = ApiManager()
     
     var cnfg: ServiceConfig
@@ -25,15 +27,15 @@ class ApiManager {
 }
 
 
-//Login Request
+//Api Request
 extension ApiManager {
     func login(_ username: String, withPassword password: String, completion: @escaping (User?, Error?) -> Void) {
         let op: JSONOperation<User> = JSONOperation<User>()
         
-        let bodyData = "username=\(username)&password=\(password)".data(using:String.Encoding.ascii, allowLossyConversion: false)
-        op.request = Request(method: .post, endpoint: "/user/login", params: nil, fields: nil, body: RequestBody.raw(data: bodyData!))
+//        let bodyData = "username=\(username)&password=\(password)".data(using:String.Encoding.ascii, allowLossyConversion: false)
+        op.request = Request(method: .post, endpoint: "/user/login", params: nil, fields: nil, body: RequestBody.json(["username": username, "password": password]))
         
-        op.request?.headers = ["Content-Type": "application/x-www-form-urlencoded"]
+        op.request?.headers = ["Content-Type": "application/json"]
         op.onParseResponse = { json in
             return User(json["result"])!
         }
@@ -43,4 +45,52 @@ extension ApiManager {
                 completion(nil, error)
         }
     }
+    
+    func getAllMachines(completion: @escaping ([VendingMachine]?, Error?) -> Void) {
+        let op: JSONOperation<[VendingMachine]> = JSONOperation<[VendingMachine]>()
+        
+        op.request = Request(method: .get, endpoint: "/vm/all", params: nil, fields: nil, body: nil)
+        
+//        op.request?.headers = ["Content-Type": "application/json"]
+        op.onParseResponse = { json in
+            return VendingMachine.load(list: json["result"].arrayValue)
+        }
+        op.execute(in: self.service).then { vendingMachine in
+            completion(vendingMachine, nil)
+            }.catch { error in
+                completion(nil, error)
+        }
+    }
+    
+    func supplyMachine(_ foodItems: NSArray, machineID: NSNumber, completion: @escaping (Bool) -> Void) {
+        let op: JSONOperation<Bool> = JSONOperation<Bool>()
+        
+        let jsonDict: NSDictionary = ["vmId": machineID, "foodList": foodItems]
+        let a = JSONSerialization.isValidJSONObject(jsonDict)
+        let jsonData = try! JSONSerialization.data(withJSONObject: jsonDict, options: [])
+//        let body = RequestBody.json(["vmId": machineID, "foodList": foodItems])
+        let body = RequestBody.raw(data: jsonData)
+        op.request = Request(method: .post, endpoint: "/vm/supply", params: nil, fields: nil, body: body)
+        
+        let token = KeychainHelper.shared.getUserToken()
+        op.request?.headers = ["Authorization": "Bearer \(token!)"]
+        op.request?.headers = ["Content-Type": "application/json"]
+        op.onParseResponse = { _ in
+            return true
+        }
+        op.execute(in: self.service).then {result in
+            completion(result)
+            }.catch {_ in}
+    }
+
+    func updateLocation(_ vmId: NSNumber, lat: NSNumber, lon: NSNumber) {
+        let op: JSONOperation<Bool> = JSONOperation<Bool>()
+        
+        op.request = Request(method: .get, endpoint: "/vm/location", params: nil, fields: nil, body: RequestBody.json(["vmId": vmId, "latitude": lat, "longitude": lon]))
+        
+        //        op.request?.headers = ["Content-Type": "application/json"]
+        //        op.onParseResponse = nil
+        op.execute(in: self.service).then {_ in }.catch {_ in}
+    }
+
 }

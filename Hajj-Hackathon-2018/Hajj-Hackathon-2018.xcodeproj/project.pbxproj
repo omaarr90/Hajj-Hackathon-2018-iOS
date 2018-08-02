@@ -11,6 +11,14 @@
 		4C119DA52111D25C00F0536A /* FoodItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C119DA32111D25C00F0536A /* FoodItemCollectionViewCell.swift */; };
 		4C119DA62111D25C00F0536A /* FoodItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C119DA42111D25C00F0536A /* FoodItemCollectionViewCell.xib */; };
 		4C119DA9211215A500F0536A /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C119DA8211215A500F0536A /* LandingViewController.swift */; };
+		4C31BC4021121EAF007B35C7 /* SelectMachineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C31BC3F21121EAF007B35C7 /* SelectMachineViewController.swift */; };
+		4C31BC4221121F22007B35C7 /* VendingMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C31BC4121121F22007B35C7 /* VendingMachine.swift */; };
+		4C31BC4421121F9C007B35C7 /* FoodItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C31BC4321121F9C007B35C7 /* FoodItem.swift */; };
+		4C31BC47211226CE007B35C7 /* VendingMachineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C31BC45211226CE007B35C7 /* VendingMachineCollectionViewCell.swift */; };
+		4C31BC48211226CE007B35C7 /* VendingMachineCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C31BC46211226CE007B35C7 /* VendingMachineCollectionViewCell.xib */; };
+		4C31BC4A21122A54007B35C7 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C31BC4921122A54007B35C7 /* KeychainHelper.swift */; };
+		4C31BC4C21123613007B35C7 /* SupplyFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C31BC4B21123613007B35C7 /* SupplyFoodViewController.swift */; };
+		4C31BC4E21124531007B35C7 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C31BC4D21124531007B35C7 /* File.swift */; };
 		4C703AD32110EF5800A25563 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C703AD22110EF5800A25563 /* AppDelegate.swift */; };
 		4C703AD52110EF5800A25563 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C703AD42110EF5800A25563 /* ViewController.swift */; };
 		4C703AD82110EF5800A25563 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C703AD62110EF5800A25563 /* Main.storyboard */; };
@@ -41,6 +49,14 @@
 		4C119DA32111D25C00F0536A /* FoodItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		4C119DA42111D25C00F0536A /* FoodItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		4C119DA8211215A500F0536A /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
+		4C31BC3F21121EAF007B35C7 /* SelectMachineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectMachineViewController.swift; sourceTree = "<group>"; };
+		4C31BC4121121F22007B35C7 /* VendingMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendingMachine.swift; sourceTree = "<group>"; };
+		4C31BC4321121F9C007B35C7 /* FoodItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItem.swift; sourceTree = "<group>"; };
+		4C31BC45211226CE007B35C7 /* VendingMachineCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendingMachineCollectionViewCell.swift; sourceTree = "<group>"; };
+		4C31BC46211226CE007B35C7 /* VendingMachineCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VendingMachineCollectionViewCell.xib; sourceTree = "<group>"; };
+		4C31BC4921122A54007B35C7 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
+		4C31BC4B21123613007B35C7 /* SupplyFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplyFoodViewController.swift; sourceTree = "<group>"; };
+		4C31BC4D21124531007B35C7 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		4C703ACF2110EF5800A25563 /* Hajj-Hackathon-2018.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hajj-Hackathon-2018.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C703AD22110EF5800A25563 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C703AD42110EF5800A25563 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +118,7 @@
 		4C119D9B2111C7B500F0536A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				4C31BC4921122A54007B35C7 /* KeychainHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -119,6 +136,9 @@
 			isa = PBXGroup;
 			children = (
 				4C119DA8211215A500F0536A /* LandingViewController.swift */,
+				4C31BC3F21121EAF007B35C7 /* SelectMachineViewController.swift */,
+				4C31BC45211226CE007B35C7 /* VendingMachineCollectionViewCell.swift */,
+				4C31BC46211226CE007B35C7 /* VendingMachineCollectionViewCell.xib */,
 			);
 			path = Landing;
 			sourceTree = "<group>";
@@ -202,6 +222,8 @@
 			children = (
 				4C119DA22111D24000F0536A /* Vending Machine Cells */,
 				4C703B082111B5D000A25563 /* VendingMachineCollectionViewController.swift */,
+				4C31BC4B21123613007B35C7 /* SupplyFoodViewController.swift */,
+				4C31BC4D21124531007B35C7 /* File.swift */,
 			);
 			path = "Vending Machine";
 			sourceTree = "<group>";
@@ -219,6 +241,8 @@
 			isa = PBXGroup;
 			children = (
 				4C703B102111BCD200A25563 /* User.swift */,
+				4C31BC4121121F22007B35C7 /* VendingMachine.swift */,
+				4C31BC4321121F9C007B35C7 /* FoodItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -290,6 +314,7 @@
 				4C119DA62111D25C00F0536A /* FoodItemCollectionViewCell.xib in Resources */,
 				4C703ADD2110EF5900A25563 /* LaunchScreen.storyboard in Resources */,
 				4C703B022111A68400A25563 /* PerosnCollectionViewCell.xib in Resources */,
+				4C31BC48211226CE007B35C7 /* VendingMachineCollectionViewCell.xib in Resources */,
 				4C703ADA2110EF5900A25563 /* Assets.xcassets in Resources */,
 				4C703AD82110EF5800A25563 /* Main.storyboard in Resources */,
 				4C703AF52111A5C600A25563 /* HeaderCollectionViewCell.xib in Resources */,
@@ -311,6 +336,7 @@
 				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityLogger/AlamofireNetworkActivityLogger.framework",
 				"${BUILT_PRODUCTS_DIR}/HermesNetwork/HermesNetwork.framework",
 				"${BUILT_PRODUCTS_DIR}/HydraAsync/Hydra.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -319,6 +345,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityLogger.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HermesNetwork.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hydra.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,19 +396,26 @@
 				4C119D9F2111C7FA00F0536A /* NetworkHelper.swift in Sources */,
 				4C703B112111BCD200A25563 /* User.swift in Sources */,
 				4C119DA9211215A500F0536A /* LandingViewController.swift in Sources */,
+				4C31BC4421121F9C007B35C7 /* FoodItem.swift in Sources */,
+				4C31BC4A21122A54007B35C7 /* KeychainHelper.swift in Sources */,
 				4C703AD52110EF5800A25563 /* ViewController.swift in Sources */,
+				4C31BC4E21124531007B35C7 /* File.swift in Sources */,
 				4C703AF32111A5C600A25563 /* LabelCollectionViewCell.swift in Sources */,
 				4C703AED2111A5BA00A25563 /* DetailsCollectionViewController.swift in Sources */,
 				4C703AF42111A5C600A25563 /* HeaderCollectionViewCell.swift in Sources */,
+				4C31BC47211226CE007B35C7 /* VendingMachineCollectionViewCell.swift in Sources */,
 				4C703B0E2111BA3500A25563 /* ApiManager.swift in Sources */,
 				4C703B092111B5D000A25563 /* VendingMachineCollectionViewController.swift in Sources */,
 				4C703AD32110EF5800A25563 /* AppDelegate.swift in Sources */,
 				4C119DA52111D25C00F0536A /* FoodItemCollectionViewCell.swift in Sources */,
 				4C703AEC2111A5BA00A25563 /* DetailsViewModel.swift in Sources */,
+				4C31BC4C21123613007B35C7 /* SupplyFoodViewController.swift in Sources */,
 				4C703AFE2111A68400A25563 /* EmptyCollectionViewCell.swift in Sources */,
 				4C703AFD2111A68400A25563 /* DetailsBaseCollectionViewCell.swift in Sources */,
+				4C31BC4021121EAF007B35C7 /* SelectMachineViewController.swift in Sources */,
 				4C703B032111A68400A25563 /* ButtonCollectionViewCell.swift in Sources */,
 				4C703B012111A68400A25563 /* PerosnCollectionViewCell.swift in Sources */,
+				4C31BC4221121F22007B35C7 /* VendingMachine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
