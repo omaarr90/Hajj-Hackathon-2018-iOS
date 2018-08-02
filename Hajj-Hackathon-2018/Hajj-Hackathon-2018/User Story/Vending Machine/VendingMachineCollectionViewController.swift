@@ -16,6 +16,7 @@ class VendingMachineCollectionViewController: UICollectionViewController, UIColl
     
     var vendingMachine: VendingMachine!
     var locationManager: CLLocationManager!
+    var foodList: NSMutableArray!
     
     var hajjLoadingView: UILabel {
         get {
@@ -68,12 +69,26 @@ class VendingMachineCollectionViewController: UICollectionViewController, UIColl
         errorView = self.hajjErrorView
         emptyView = self.hajjEmptyView
         
+        self.foodList = self.vendingMachine.foodList.mutableCopy() as! NSMutableArray
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
         setupInitialViewState()
+        
+        getFoodList()
+    }
+    
+    func getFoodList() {
+        startLoading()
+        ApiManager.shared.getMachineInfo(for: self.vendingMachine.id) { (vendingMachine, error) in
+            if let vm = vendingMachine {
+                self.foodList = vm.foodList.mutableCopy() as! NSMutableArray
+                self.endLoading(animated: true, error: error, completion: nil)
+                self.collectionView?.reloadData()
+            }
+        }
     }
     
     @objc func showSupplyPage() {
@@ -81,7 +96,7 @@ class VendingMachineCollectionViewController: UICollectionViewController, UIColl
     }
     
     func hasContent() -> Bool {
-        return self.vendingMachine.foodList.count > 0
+        return self.foodList.count > 0
     }
     // MARK: - Navigation
 
@@ -110,15 +125,36 @@ extension VendingMachineCollectionViewController {
     
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.vendingMachine.foodList.count
+        return self.foodList.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! FoodItemCollectionViewCell
         
         // Configure the cell
-        
+        cell.titleLabel.text = (self.foodList[indexPath.item] as! FoodItem).nameEn as String
+        cell.weightLabel.text = "\((self.foodList[indexPath.item] as! FoodItem).weight as! Int) g"
+        cell.caloriesLabel.text = "\((self.foodList[indexPath.item] as! FoodItem).calories as! Int) Kcal"
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //
+        let foodItem = self.foodList[indexPath.item] as! FoodItem
+        let foodId = foodItem.id
+        ApiManager.shared.withdraw(food: foodId, fromMachine: self.vendingMachine.id, customerId: 1) {  error in
+            if let _ = error {
+                //show error alert
+            } else {
+                for item in self.foodList {
+                    let foodItemToDelete = item as! FoodItem
+                    if foodItemToDelete.id == foodItem.id {
+                        self.foodList.remove(item)
+                    }
+                }
+                self.collectionView?.reloadData()
+            }
+        }
     }
     
     // MARK: UICollectionViewDelegate

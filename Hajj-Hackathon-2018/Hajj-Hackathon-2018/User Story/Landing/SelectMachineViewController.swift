@@ -43,7 +43,7 @@ class SelectMachineViewController: UICollectionViewController, UICollectionViewD
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
-        if let destiationNavVC = segue.destination as? UINavigationController, let destinationVC = destiationNavVC.viewControllers.first as? VendingMachineCollectionViewController {
+        if let destiationNavVC = segue.destination as? UINavigationController, let destinationVC = destiationNavVC.viewControllers.first as? LandingViewController {
             destinationVC.vendingMachine = self.selectedVendingMachine
         }
     }
@@ -84,7 +84,7 @@ extension SelectMachineViewController
                 //save user token
                 KeychainHelper.shared.saveUserToken(user!.token!)
                 // show next page
-                self.performSegue(withIdentifier: "showVendingMachine", sender: self)
+                self.performSegue(withIdentifier: "showLandingPage", sender: self)
             } else {
                 print("Recived Error \(error!)")
                 //showErrorPage

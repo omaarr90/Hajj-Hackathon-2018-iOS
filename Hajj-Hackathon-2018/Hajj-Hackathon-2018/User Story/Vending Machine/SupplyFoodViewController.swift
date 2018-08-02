@@ -56,8 +56,9 @@ class SupplyFoodViewController: UIViewController {
 */
 
         
-        for _ in 0...5 {
-            let diceRoll = Int(arc4random_uniform(8) + 1)
+        for _ in 0..<5 {
+//            let diceRoll = Int(arc4random_uniform(8) + 1)
+            let diceRoll = Int(arc4random_uniform(10))
 
             let foodItem = FoodItem(MealConstants.mealsItemAr[diceRoll] as NSString, nameEn: MealConstants.mealsItemEn[diceRoll] as NSString, type: MealConstants.mealTypes[diceRoll] as NSString, timestamp: NSNumber(integerLiteral: 5), customerId: nil, vmId: self.vendingMachine!.id, pictureUrl: MealConstants.mealUrls[diceRoll] as NSString, calories: NSNumber(integerLiteral: MealConstants.mealCals[diceRoll]), weight: NSNumber(integerLiteral: MealConstants.mealweights[diceRoll]))
             self.foodList.add(foodItem.toDict())

@@ -11,9 +11,33 @@ import UIKit
 
 class LandingViewController: UIViewController {
     
+    var vendingMachine: VendingMachine!
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    let itemList = ["Food",
+                    "طعام",
+                    "Comida",
+                    "フード",
+                    "Gıda",
+                    "کھانا",
+                    "cibus",
+                    "खाना"]
+    
+    var currentIndex = 0
+    
+    var timer: Timer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.titleLabel.fadeTransition(0.2)
+        self.timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (timer) in
+            self.titleLabel.text = self.itemList[self.currentIndex]
+            self.currentIndex = self.currentIndex + 1
+            if self.currentIndex == 8 {
+                self.currentIndex = 0
+            }
+        }
         
     }
 

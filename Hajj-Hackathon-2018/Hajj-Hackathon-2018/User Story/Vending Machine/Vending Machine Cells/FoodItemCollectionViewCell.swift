@@ -10,6 +10,10 @@ import UIKit
 
 class FoodItemCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var weightLabel: UILabel!
+    @IBOutlet weak var caloriesLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

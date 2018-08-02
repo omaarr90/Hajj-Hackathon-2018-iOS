@@ -41,6 +41,7 @@
 		4C703B092111B5D000A25563 /* VendingMachineCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C703B082111B5D000A25563 /* VendingMachineCollectionViewController.swift */; };
 		4C703B0E2111BA3500A25563 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C703B0D2111BA3500A25563 /* ApiManager.swift */; };
 		4C703B112111BCD200A25563 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C703B102111BCD200A25563 /* User.swift */; };
+		4CD8AF3D2113653300E0681B /* HajjColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8AF3C2113653300E0681B /* HajjColor.swift */; };
 		F90D7664D8E4A936503E0F17 /* Pods_Hajj_Hackathon_2018.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B70AEF6C66B6C6B01D1C5907 /* Pods_Hajj_Hackathon_2018.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +82,7 @@
 		4C703B082111B5D000A25563 /* VendingMachineCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendingMachineCollectionViewController.swift; sourceTree = "<group>"; };
 		4C703B0D2111BA3500A25563 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		4C703B102111BCD200A25563 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4CD8AF3C2113653300E0681B /* HajjColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HajjColor.swift; sourceTree = "<group>"; };
 		6E801920AB68B608586AA045 /* Pods-Hajj-Hackathon-2018.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hajj-Hackathon-2018.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hajj-Hackathon-2018/Pods-Hajj-Hackathon-2018.debug.xcconfig"; sourceTree = "<group>"; };
 		95ADD3DF42AB4996975FA6F6 /* Pods-Hajj-Hackathon-2018.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hajj-Hackathon-2018.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hajj-Hackathon-2018/Pods-Hajj-Hackathon-2018.release.xcconfig"; sourceTree = "<group>"; };
 		B70AEF6C66B6C6B01D1C5907 /* Pods_Hajj_Hackathon_2018.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hajj_Hackathon_2018.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				4C31BC4921122A54007B35C7 /* KeychainHelper.swift */,
+				4CD8AF3C2113653300E0681B /* HajjColor.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				4C31BC4421121F9C007B35C7 /* FoodItem.swift in Sources */,
 				4C31BC4A21122A54007B35C7 /* KeychainHelper.swift in Sources */,
 				4C703AD52110EF5800A25563 /* ViewController.swift in Sources */,
+				4CD8AF3D2113653300E0681B /* HajjColor.swift in Sources */,
 				4C31BC4E21124531007B35C7 /* File.swift in Sources */,
 				4C703AF32111A5C600A25563 /* LabelCollectionViewCell.swift in Sources */,
 				4C703AED2111A5BA00A25563 /* DetailsCollectionViewController.swift in Sources */,
@@ -565,7 +569,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3S846UE5F8;
 				INFOPLIST_FILE = "Hajj-Hackathon-2018/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.omaarr90.Hajj-Hackathon-2018";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -581,7 +588,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3S846UE5F8;
 				INFOPLIST_FILE = "Hajj-Hackathon-2018/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.omaarr90.Hajj-Hackathon-2018";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
