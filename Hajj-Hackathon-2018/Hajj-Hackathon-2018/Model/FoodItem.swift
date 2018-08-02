@@ -9,7 +9,7 @@
 import SwiftyJSON
 
 struct FoodItem {
-    var id: NSNumber
+    var id: NSString
     var nameAr: NSString
     var nameEn: NSString
     var type: NSString
@@ -24,7 +24,7 @@ struct FoodItem {
     
     
     init?(_ json: JSON) {
-        self.id = json["id"].numberValue
+        self.id = json["id"].stringValue as NSString
         self.nameAr = json["nameAr"].stringValue as NSString
         self.nameEn = json["nameEn"].stringValue as NSString
         self.type   = json["type"].stringValue as NSString
@@ -49,10 +49,11 @@ struct FoodItem {
         self.weight = weight
         
         //using NSUserDefaults
-        let currentInt = UserDefaults.standard.integer(forKey: "foodId")
-        self.id = currentInt != 0 ? NSNumber(integerLiteral: currentInt + 1) : 1
-        
-        UserDefaults.standard.set((currentInt + 1), forKey: "foodId")
+//        let currentInt = UserDefaults.standard.integer(forKey: "foodId")
+//        self.id = currentInt != 0 ? NSNumber(integerLiteral: currentInt + 1) : 1
+        self.id = UUID().uuidString as NSString
+
+//        UserDefaults.standard.set((currentInt + 1), forKey: "foodId")
     }
     
     static func load(list: [JSON]) -> [FoodItem] {

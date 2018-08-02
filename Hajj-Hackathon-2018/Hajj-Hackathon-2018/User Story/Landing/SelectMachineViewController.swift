@@ -43,7 +43,7 @@ class SelectMachineViewController: UICollectionViewController, UICollectionViewD
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
-        if let destiationNavVC = segue.destination as? UINavigationController, let destinationVC = destiationNavVC.viewControllers.first as? LandingViewController {
+        if let destinationVC = segue.destination as? LandingViewController {
             destinationVC.vendingMachine = self.selectedVendingMachine
         }
     }

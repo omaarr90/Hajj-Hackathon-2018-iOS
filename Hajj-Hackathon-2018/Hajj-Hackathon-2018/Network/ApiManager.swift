@@ -45,10 +45,10 @@ extension ApiManager {
         }
     }
     
-    func getCustomerEligibility(_ customerId: NSArray, completion: @escaping (Bool) -> Void) {
+    func getCustomerEligibility(_ customerId: NSNumber, completion: @escaping (Bool) -> Void) {
         let op: JSONOperation<Bool> = JSONOperation<Bool>()
         
-        op.request = Request(method: .get, endpoint: "/customer/eligibility", params: ["customerId": 1], fields: nil, body: nil)
+        op.request = Request(method: .get, endpoint: "/customer/eligibility", params: nil, fields: ["customerId": customerId], body: nil)
         
         let token = KeychainHelper.shared.getUserToken()!
         op.request?.headers = ["Content-Type": "application/json", "Authorization": "Bearer \(token)"]
@@ -61,7 +61,7 @@ extension ApiManager {
     }
 
 
-    func withdraw(food foodId: NSNumber, fromMachine vmId: NSNumber, customerId: NSNumber, completion: @escaping (Error?) -> Void) {
+    func withdraw(food foodId: NSString, fromMachine vmId: NSNumber, customerId: NSNumber, completion: @escaping (Error?) -> Void) {
         let op: JSONOperation<Bool> = JSONOperation<Bool>()
         
         //        let bodyData = "username=\(username)&password=\(password)".data(using:String.Encoding.ascii, allowLossyConversion: false)

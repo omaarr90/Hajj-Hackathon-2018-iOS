@@ -27,6 +27,7 @@ class SupplyFoodViewController: UIViewController {
     @IBAction func submit(_ sender: UIButton) {
         ApiManager.shared.supplyMachine(self.foodList, machineID: self.vendingMachine.id) {result in
             print("\(result)")
+            self.foodList.removeAllObjects()
         }
     }
     

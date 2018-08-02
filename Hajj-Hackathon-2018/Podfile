@@ -10,5 +10,6 @@ target 'Hajj-Hackathon-2018' do
   pod 'AlamofireNetworkActivityLogger', '~> 2.3'
   pod 'SwiftKeychainWrapper'
   pod 'StatefulViewController'
+  pod 'lottie-ios'
   
 end

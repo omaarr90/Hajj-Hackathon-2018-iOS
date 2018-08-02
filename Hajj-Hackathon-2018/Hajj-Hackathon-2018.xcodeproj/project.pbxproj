@@ -42,6 +42,10 @@
 		4C703B0E2111BA3500A25563 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C703B0D2111BA3500A25563 /* ApiManager.swift */; };
 		4C703B112111BCD200A25563 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C703B102111BCD200A25563 /* User.swift */; };
 		4CD8AF3D2113653300E0681B /* HajjColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8AF3C2113653300E0681B /* HajjColor.swift */; };
+		4CD8AF3F21136EEB00E0681B /* fingerprint-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 4CD8AF3E21136EEB00E0681B /* fingerprint-animation.json */; };
+		4CD8AF4121138AC700E0681B /* FoodPrepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8AF4021138AC700E0681B /* FoodPrepViewController.swift */; };
+		4CD8AF4321138B8600E0681B /* food-preparing.json in Resources */ = {isa = PBXBuildFile; fileRef = 4CD8AF4221138B8600E0681B /* food-preparing.json */; };
+		4CD8AF45211393A500E0681B /* FoodTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8AF44211393A500E0681B /* FoodTypeViewController.swift */; };
 		F90D7664D8E4A936503E0F17 /* Pods_Hajj_Hackathon_2018.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B70AEF6C66B6C6B01D1C5907 /* Pods_Hajj_Hackathon_2018.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +87,10 @@
 		4C703B0D2111BA3500A25563 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		4C703B102111BCD200A25563 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4CD8AF3C2113653300E0681B /* HajjColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HajjColor.swift; sourceTree = "<group>"; };
+		4CD8AF3E21136EEB00E0681B /* fingerprint-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "fingerprint-animation.json"; sourceTree = "<group>"; };
+		4CD8AF4021138AC700E0681B /* FoodPrepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPrepViewController.swift; sourceTree = "<group>"; };
+		4CD8AF4221138B8600E0681B /* food-preparing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "food-preparing.json"; sourceTree = "<group>"; };
+		4CD8AF44211393A500E0681B /* FoodTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTypeViewController.swift; sourceTree = "<group>"; };
 		6E801920AB68B608586AA045 /* Pods-Hajj-Hackathon-2018.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hajj-Hackathon-2018.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hajj-Hackathon-2018/Pods-Hajj-Hackathon-2018.debug.xcconfig"; sourceTree = "<group>"; };
 		95ADD3DF42AB4996975FA6F6 /* Pods-Hajj-Hackathon-2018.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hajj-Hackathon-2018.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hajj-Hackathon-2018/Pods-Hajj-Hackathon-2018.release.xcconfig"; sourceTree = "<group>"; };
 		B70AEF6C66B6C6B01D1C5907 /* Pods_Hajj_Hackathon_2018.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hajj_Hackathon_2018.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,6 +175,8 @@
 		4C703AD12110EF5800A25563 /* Hajj-Hackathon-2018 */ = {
 			isa = PBXGroup;
 			children = (
+				4CD8AF4221138B8600E0681B /* food-preparing.json */,
+				4CD8AF3E21136EEB00E0681B /* fingerprint-animation.json */,
 				4C119D9B2111C7B500F0536A /* Utils */,
 				4C703AD22110EF5800A25563 /* AppDelegate.swift */,
 				4C703B0F2111BCC100A25563 /* Model */,
@@ -227,6 +237,8 @@
 				4C703B082111B5D000A25563 /* VendingMachineCollectionViewController.swift */,
 				4C31BC4B21123613007B35C7 /* SupplyFoodViewController.swift */,
 				4C31BC4D21124531007B35C7 /* File.swift */,
+				4CD8AF4021138AC700E0681B /* FoodPrepViewController.swift */,
+				4CD8AF44211393A500E0681B /* FoodTypeViewController.swift */,
 			);
 			path = "Vending Machine";
 			sourceTree = "<group>";
@@ -317,11 +329,13 @@
 				4C119DA62111D25C00F0536A /* FoodItemCollectionViewCell.xib in Resources */,
 				4C703ADD2110EF5900A25563 /* LaunchScreen.storyboard in Resources */,
 				4C703B022111A68400A25563 /* PerosnCollectionViewCell.xib in Resources */,
+				4CD8AF4321138B8600E0681B /* food-preparing.json in Resources */,
 				4C31BC48211226CE007B35C7 /* VendingMachineCollectionViewCell.xib in Resources */,
 				4C703ADA2110EF5900A25563 /* Assets.xcassets in Resources */,
 				4C703AD82110EF5800A25563 /* Main.storyboard in Resources */,
 				4C703AF52111A5C600A25563 /* HeaderCollectionViewCell.xib in Resources */,
 				4C703AF22111A5C600A25563 /* LabelCollectionViewCell.xib in Resources */,
+				4CD8AF3F21136EEB00E0681B /* fingerprint-animation.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +356,7 @@
 				"${BUILT_PRODUCTS_DIR}/StatefulViewController/StatefulViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -352,6 +367,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StatefulViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -404,6 +420,7 @@
 				4C31BC4421121F9C007B35C7 /* FoodItem.swift in Sources */,
 				4C31BC4A21122A54007B35C7 /* KeychainHelper.swift in Sources */,
 				4C703AD52110EF5800A25563 /* ViewController.swift in Sources */,
+				4CD8AF4121138AC700E0681B /* FoodPrepViewController.swift in Sources */,
 				4CD8AF3D2113653300E0681B /* HajjColor.swift in Sources */,
 				4C31BC4E21124531007B35C7 /* File.swift in Sources */,
 				4C703AF32111A5C600A25563 /* LabelCollectionViewCell.swift in Sources */,
@@ -421,6 +438,7 @@
 				4C31BC4021121EAF007B35C7 /* SelectMachineViewController.swift in Sources */,
 				4C703B032111A68400A25563 /* ButtonCollectionViewCell.swift in Sources */,
 				4C703B012111A68400A25563 /* PerosnCollectionViewCell.swift in Sources */,
+				4CD8AF45211393A500E0681B /* FoodTypeViewController.swift in Sources */,
 				4C31BC4221121F22007B35C7 /* VendingMachine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

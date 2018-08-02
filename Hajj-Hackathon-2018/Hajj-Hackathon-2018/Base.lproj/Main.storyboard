@@ -59,11 +59,179 @@
                     <navigationItem key="navigationItem" id="GEw-0F-fng"/>
                     <connections>
                         <segue destination="R7r-4V-I0F" kind="show" identifier="showSupplyPage" id="hIM-Gd-Da1"/>
+                        <segue destination="QyB-ug-hht" kind="presentation" identifier="showFoodPrep" modalPresentationStyle="currentContext" id="whn-0k-6l4"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BNi-fA-L31" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2056.8000000000002" y="456.52173913043481"/>
+        </scene>
+        <!--Food Type View Controller-->
+        <scene sceneID="uXg-qa-SRO">
+            <objects>
+                <viewController id="gYo-iZ-ClS" customClass="FoodTypeViewController" customModule="Hajj_Hackathon_2018" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="453-yT-T7J">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FrP-jZ-oSn">
+                                <rect key="frame" x="50" y="166" width="668" height="908"/>
+                                <subviews>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chicken" translatesAutoresizingMaskIntoConstraints="NO" id="K6K-LP-gnQ">
+                                        <rect key="frame" x="8" y="8" width="200" height="200"/>
+                                        <color key="backgroundColor" red="0.87058823529411766" green="0.7803921568627451" blue="0.66274509803921566" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="PMH-y8-nSC"/>
+                                            <constraint firstAttribute="height" constant="200" id="cCH-xB-utN"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vagen" translatesAutoresizingMaskIntoConstraints="NO" id="19M-HQ-3hM">
+                                        <rect key="frame" x="460" y="8" width="200" height="200"/>
+                                        <color key="backgroundColor" red="0.65098039215686276" green="0.84705882352941175" blue="0.87058823529411766" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="FiS-Dd-jFb"/>
+                                            <constraint firstAttribute="width" constant="200" id="i5H-wG-zOo"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chicken" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vpg-CB-WcE">
+                                        <rect key="frame" x="8" y="216" width="200" height="53"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="44"/>
+                                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vagen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggL-Dh-Bb2">
+                                        <rect key="frame" x="460" y="216" width="200" height="53"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="44"/>
+                                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seafood" translatesAutoresizingMaskIntoConstraints="NO" id="84n-Gh-KjN">
+                                        <rect key="frame" x="8" y="354" width="200" height="200"/>
+                                        <color key="backgroundColor" red="0.66274509803921566" green="0.77647058823529413" blue="0.87058823529411766" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="G94-Qk-J3e"/>
+                                            <constraint firstAttribute="height" constant="200" id="n8d-bd-o1s"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meat" translatesAutoresizingMaskIntoConstraints="NO" id="J8a-kb-rb4">
+                                        <rect key="frame" x="458" y="354" width="200" height="200"/>
+                                        <color key="backgroundColor" red="0.87058823529411766" green="0.70196078431372544" blue="0.66274509803921566" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="Nez-g1-v6k"/>
+                                            <constraint firstAttribute="height" constant="200" id="t9z-5m-V6q"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fish" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nd5-Au-dDg">
+                                        <rect key="frame" x="8" y="562" width="200" height="53"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="44"/>
+                                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bPa-mt-N8s">
+                                        <rect key="frame" x="458" y="562" width="200" height="53"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="44"/>
+                                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="19M-HQ-3hM" firstAttribute="top" secondItem="FrP-jZ-oSn" secondAttribute="top" constant="8" id="0yc-WB-0Tx"/>
+                                    <constraint firstItem="K6K-LP-gnQ" firstAttribute="leading" secondItem="FrP-jZ-oSn" secondAttribute="leading" constant="8" id="45A-fg-I4P"/>
+                                    <constraint firstItem="nd5-Au-dDg" firstAttribute="top" secondItem="84n-Gh-KjN" secondAttribute="bottom" constant="8" id="8Bp-cv-mqu"/>
+                                    <constraint firstItem="bPa-mt-N8s" firstAttribute="trailing" secondItem="J8a-kb-rb4" secondAttribute="trailing" id="HbR-Yy-AcA"/>
+                                    <constraint firstItem="Vpg-CB-WcE" firstAttribute="leading" secondItem="K6K-LP-gnQ" secondAttribute="leading" id="M1m-UX-pDY"/>
+                                    <constraint firstAttribute="trailing" secondItem="19M-HQ-3hM" secondAttribute="trailing" constant="8" id="PSA-cI-I23"/>
+                                    <constraint firstItem="84n-Gh-KjN" firstAttribute="top" secondItem="Vpg-CB-WcE" secondAttribute="bottom" constant="85" id="PSZ-zi-sXb"/>
+                                    <constraint firstItem="ggL-Dh-Bb2" firstAttribute="leading" secondItem="19M-HQ-3hM" secondAttribute="leading" id="TWf-to-67Y"/>
+                                    <constraint firstItem="Vpg-CB-WcE" firstAttribute="trailing" secondItem="K6K-LP-gnQ" secondAttribute="trailing" id="U0h-8W-Ca4"/>
+                                    <constraint firstItem="K6K-LP-gnQ" firstAttribute="top" secondItem="FrP-jZ-oSn" secondAttribute="top" constant="8" id="WSN-Rl-AnQ"/>
+                                    <constraint firstItem="ggL-Dh-Bb2" firstAttribute="trailing" secondItem="19M-HQ-3hM" secondAttribute="trailing" id="al8-0B-0cC"/>
+                                    <constraint firstItem="nd5-Au-dDg" firstAttribute="leading" secondItem="84n-Gh-KjN" secondAttribute="leading" id="eEM-A8-5pE"/>
+                                    <constraint firstItem="bPa-mt-N8s" firstAttribute="leading" secondItem="J8a-kb-rb4" secondAttribute="leading" id="k8E-Es-wK1"/>
+                                    <constraint firstItem="nd5-Au-dDg" firstAttribute="trailing" secondItem="84n-Gh-KjN" secondAttribute="trailing" id="lY7-OI-RYY"/>
+                                    <constraint firstAttribute="trailing" secondItem="J8a-kb-rb4" secondAttribute="trailing" constant="10" id="mCc-6I-Vqr"/>
+                                    <constraint firstItem="Vpg-CB-WcE" firstAttribute="top" secondItem="K6K-LP-gnQ" secondAttribute="bottom" constant="8" id="p9e-YG-TQd"/>
+                                    <constraint firstItem="ggL-Dh-Bb2" firstAttribute="top" secondItem="19M-HQ-3hM" secondAttribute="bottom" constant="8" id="q7F-fT-Bzi"/>
+                                    <constraint firstItem="J8a-kb-rb4" firstAttribute="top" secondItem="ggL-Dh-Bb2" secondAttribute="bottom" constant="85" id="rNK-Ky-71Z"/>
+                                    <constraint firstItem="bPa-mt-N8s" firstAttribute="top" secondItem="J8a-kb-rb4" secondAttribute="bottom" constant="8" id="ttK-kE-0ah"/>
+                                    <constraint firstItem="84n-Gh-KjN" firstAttribute="leading" secondItem="FrP-jZ-oSn" secondAttribute="leading" constant="8" id="wS8-UA-yfN"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FrP-jZ-oSn" firstAttribute="bottom" secondItem="v1o-eC-J99" secondAttribute="bottom" constant="50" id="Ejp-Ei-Hww"/>
+                            <constraint firstItem="FrP-jZ-oSn" firstAttribute="top" secondItem="v1o-eC-J99" secondAttribute="top" constant="50" id="QDP-v8-ELe"/>
+                            <constraint firstAttribute="trailing" secondItem="FrP-jZ-oSn" secondAttribute="trailing" constant="50" id="SXl-Y3-q4u"/>
+                            <constraint firstItem="FrP-jZ-oSn" firstAttribute="leading" secondItem="v1o-eC-J99" secondAttribute="leading" constant="50" id="YPz-CH-3gA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="v1o-eC-J99"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="UUO-lj-u4m"/>
+                    <connections>
+                        <outlet property="chickenImageView" destination="K6K-LP-gnQ" id="o2h-dc-q5n"/>
+                        <outlet property="fishImageView" destination="84n-Gh-KjN" id="UEL-nc-mOd"/>
+                        <outlet property="meatImageView" destination="J8a-kb-rb4" id="s15-V3-8BI"/>
+                        <outlet property="vagenImageView" destination="19M-HQ-3hM" id="3Fm-xU-YSM"/>
+                        <outletCollection property="sizeConstraint" destination="t9z-5m-V6q" collectionClass="NSMutableArray" id="lgs-yM-jBD"/>
+                        <outletCollection property="sizeConstraint" destination="Nez-g1-v6k" collectionClass="NSMutableArray" id="cGQ-vx-k41"/>
+                        <outletCollection property="sizeConstraint" destination="G94-Qk-J3e" collectionClass="NSMutableArray" id="kAD-ht-hDR"/>
+                        <outletCollection property="sizeConstraint" destination="n8d-bd-o1s" collectionClass="NSMutableArray" id="V1Y-1L-fDu"/>
+                        <outletCollection property="sizeConstraint" destination="i5H-wG-zOo" collectionClass="NSMutableArray" id="3vf-cS-D2Q"/>
+                        <outletCollection property="sizeConstraint" destination="FiS-Dd-jFb" collectionClass="NSMutableArray" id="jh2-4f-tlu"/>
+                        <outletCollection property="sizeConstraint" destination="PMH-y8-nSC" collectionClass="NSMutableArray" id="J9f-f8-ZmN"/>
+                        <outletCollection property="sizeConstraint" destination="cCH-xB-utN" collectionClass="NSMutableArray" id="5br-Z5-zUv"/>
+                        <segue destination="Pfb-9f-c4m" kind="show" identifier="showFoodSelection" id="c9w-SZ-KCv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EpU-Vn-7HR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1116.40625" y="1204.6875"/>
+        </scene>
+        <!--Food Prep View Controller-->
+        <scene sceneID="piB-cg-br0">
+            <objects>
+                <viewController id="QyB-ug-hht" customClass="FoodPrepViewController" customModule="Hajj_Hackathon_2018" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hBE-O8-t11">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kuv-pR-iLN">
+                                <rect key="frame" x="34" y="262" width="700" height="500"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="700" id="GZ9-cD-Dqw"/>
+                                    <constraint firstAttribute="height" constant="500" id="sqf-Ss-gdp"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preparing Food..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHy-qM-aqS">
+                                <rect key="frame" x="128" y="792" width="513.5" height="86"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="72"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fHy-qM-aqS" firstAttribute="top" secondItem="Kuv-pR-iLN" secondAttribute="bottom" constant="30" id="0KV-PL-SO7"/>
+                            <constraint firstItem="Kuv-pR-iLN" firstAttribute="centerX" secondItem="hBE-O8-t11" secondAttribute="centerX" id="IWm-RO-DJc"/>
+                            <constraint firstItem="fHy-qM-aqS" firstAttribute="centerX" secondItem="Kuv-pR-iLN" secondAttribute="centerX" id="UxU-sf-Y1h"/>
+                            <constraint firstItem="Kuv-pR-iLN" firstAttribute="centerY" secondItem="hBE-O8-t11" secondAttribute="centerY" id="ww7-3u-YFS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Lf3-du-nKq"/>
+                    </view>
+                    <connections>
+                        <outlet property="animationContentView" destination="Kuv-pR-iLN" id="bUH-7W-F3f"/>
+                        <outlet property="statusLabel" destination="fHy-qM-aqS" id="mOf-cD-jLu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4ZO-Bn-vmq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2056" y="1205"/>
         </scene>
         <!--Supply Food View Controller-->
         <scene sceneID="G5G-Al-7xJ">
@@ -155,18 +323,17 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X2f-fx-TZn">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="550"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qso-Ss-Rv7">
-                                        <rect key="frame" x="308.5" y="200" width="150" height="150"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app-logo" translatesAutoresizingMaskIntoConstraints="NO" id="qso-Ss-Rv7">
+                                        <rect key="frame" x="34" y="-75" width="700" height="936"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="150" id="7dR-cU-NSv"/>
-                                            <constraint firstAttribute="width" constant="150" id="8Gv-E1-vIX"/>
+                                            <constraint firstAttribute="height" constant="936" id="7dR-cU-NSv"/>
+                                            <constraint firstAttribute="width" constant="700" id="8Gv-E1-vIX"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.55686274509803924" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="550" id="IcX-ha-lj4"/>
-                                    <constraint firstItem="qso-Ss-Rv7" firstAttribute="centerY" secondItem="X2f-fx-TZn" secondAttribute="centerY" id="lPy-8d-Spc"/>
+                                    <constraint firstItem="qso-Ss-Rv7" firstAttribute="centerY" secondItem="X2f-fx-TZn" secondAttribute="centerY" constant="118" id="lPy-8d-Spc"/>
                                     <constraint firstItem="qso-Ss-Rv7" firstAttribute="centerX" secondItem="X2f-fx-TZn" secondAttribute="centerX" id="wrZ-P6-cWz"/>
                                 </constraints>
                             </view>
@@ -174,16 +341,33 @@
                                 <rect key="frame" x="0.0" y="550" width="768" height="474"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3t-Jg-IgW">
-                                        <rect key="frame" x="214.5" y="142" width="340" height="191"/>
+                                        <rect key="frame" x="214.5" y="41.5" width="340" height="191"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="160"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GZe-d5-Bwi">
+                                        <rect key="frame" x="296.5" y="225.5" width="175" height="175"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="175" id="fTi-hx-xPp"/>
+                                            <constraint firstAttribute="height" constant="175" id="wEH-uK-2bx"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHY-5P-spp">
+                                        <rect key="frame" x="328.5" y="408.5" width="112.5" height="57.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="kHY-5P-spp" secondAttribute="bottom" constant="8" id="0hC-9f-czl"/>
                                     <constraint firstItem="O3t-Jg-IgW" firstAttribute="centerX" secondItem="DnO-lT-y9Q" secondAttribute="centerX" id="Hw3-6X-PhN"/>
-                                    <constraint firstItem="O3t-Jg-IgW" firstAttribute="centerY" secondItem="DnO-lT-y9Q" secondAttribute="centerY" id="L8K-l9-HIa"/>
+                                    <constraint firstItem="O3t-Jg-IgW" firstAttribute="centerY" secondItem="DnO-lT-y9Q" secondAttribute="centerY" constant="-100" id="L8K-l9-HIa"/>
+                                    <constraint firstItem="GZe-d5-Bwi" firstAttribute="centerX" secondItem="O3t-Jg-IgW" secondAttribute="centerX" id="Rez-kc-vvM"/>
+                                    <constraint firstItem="kHY-5P-spp" firstAttribute="top" secondItem="GZe-d5-Bwi" secondAttribute="bottom" constant="8" id="kOe-Wh-IOR"/>
+                                    <constraint firstItem="kHY-5P-spp" firstAttribute="centerX" secondItem="GZe-d5-Bwi" secondAttribute="centerX" id="pQY-Ff-NAD"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -201,13 +385,15 @@
                     </view>
                     <navigationItem key="navigationItem" id="goY-4C-ATE"/>
                     <connections>
+                        <outlet property="animationContentView" destination="GZe-d5-Bwi" id="jvd-gP-7s0"/>
+                        <outlet property="statusLabel" destination="kHY-5P-spp" id="dt5-Bw-yb3"/>
                         <outlet property="titleLabel" destination="O3t-Jg-IgW" id="Vph-fB-SA0"/>
-                        <segue destination="wFu-DW-58c" kind="show" id="aLi-lv-3xr"/>
+                        <segue destination="wFu-DW-58c" kind="show" identifier="showFoodSelection" id="aLi-lv-3xr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qbx-CP-TVN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="21.600000000000001" y="456.52173913043481"/>
+            <point key="canvasLocation" x="21.09375" y="456.44531249999994"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CEe-Du-WZ5">
@@ -238,7 +424,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Pfb-9f-c4m" kind="relationship" relationship="rootViewController" id="c8b-cj-PUI"/>
+                        <segue destination="gYo-iZ-ClS" kind="relationship" relationship="rootViewController" id="ety-cj-TTl"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U1O-Zr-ycc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -246,4 +432,11 @@
             <point key="canvasLocation" x="1117.5999999999999" y="456.52173913043481"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="app-logo" width="1536" height="2048"/>
+        <image name="chicken" width="1536" height="1536"/>
+        <image name="meat" width="480" height="480"/>
+        <image name="seafood" width="480" height="479"/>
+        <image name="vagen" width="480" height="480"/>
+    </resources>
 </document>

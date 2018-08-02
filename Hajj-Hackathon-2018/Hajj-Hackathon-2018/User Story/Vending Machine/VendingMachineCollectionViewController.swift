@@ -12,7 +12,8 @@ import StatefulViewController
 
 private let reuseIdentifier = "FoodItemCollectionViewCell"
 
-class VendingMachineCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, CLLocationManagerDelegate, StatefulViewController {
+class VendingMachineCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, CLLocationManagerDelegate, StatefulViewController, FoodPrepViewControllerDelegate {
+    
     
     var vendingMachine: VendingMachine!
     var locationManager: CLLocationManager!
@@ -80,6 +81,13 @@ class VendingMachineCollectionViewController: UICollectionViewController, UIColl
         getFoodList()
     }
     
+    func didFinishPreparingFood(controller: FoodPrepViewController) {
+        controller.dismiss(animated: true) {
+            self.navigationController?.dismiss(animated: true, completion: nil)
+        }
+    }
+
+    
     func getFoodList() {
         startLoading()
         ApiManager.shared.getMachineInfo(for: self.vendingMachine.id) { (vendingMachine, error) in
@@ -106,6 +114,8 @@ class VendingMachineCollectionViewController: UICollectionViewController, UIColl
         // Pass the selected object to the new view controller.
         if let destinationVC = segue.destination as? SupplyFoodViewController {
             destinationVC.vendingMachine = self.vendingMachine
+        } else if let destinationVC = segue.destination as? FoodPrepViewController {
+            destinationVC.delegate = self
         }
     }
     
@@ -152,7 +162,7 @@ extension VendingMachineCollectionViewController {
                         self.foodList.remove(item)
                     }
                 }
-                self.collectionView?.reloadData()
+                self.performSegue(withIdentifier: "showFoodPrep", sender: self)
             }
         }
     }
