@@ -11,7 +11,7 @@ import StatefulViewController
 
 class EmptyStateView: UIImageView, StatefulPlaceholderView {
     func placeholderViewInsets() -> UIEdgeInsets {
-        return UIEdgeInsets(top: 100, left: 20, bottom: 20, right: 20)
+        return UIEdgeInsets(top: 100, left: 100, bottom: 100, right: 100)
     }
 
 }

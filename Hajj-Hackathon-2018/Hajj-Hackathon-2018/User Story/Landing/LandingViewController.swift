@@ -49,6 +49,10 @@ class LandingViewController: UIViewController {
         self.statusLabel.alpha = 0.0
         self.fingerprintView = fingerView()
         
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissSelf))
+        tap.numberOfTapsRequired = 2
+        
+        self.view.addGestureRecognizer(tap)
     }
     
     // MARK: - Navigation
@@ -108,6 +112,10 @@ class LandingViewController: UIViewController {
                 })
             }
         }
+    }
+    
+    @objc func dismissSelf() {
+        self.dismiss(animated: true, completion: nil)
     }
 
 }

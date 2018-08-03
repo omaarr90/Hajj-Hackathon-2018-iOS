@@ -78,9 +78,7 @@ class VendingMachineCollectionViewController: UICollectionViewController, UIColl
         errorView = self.hajjErrorView
         emptyView = self.hajjEmptyView
         
-        
-        self.collectionView?.backgroundView = self.emptyView
-        
+                
         self.foodList = self.vendingMachine.foodList.mutableCopy() as! NSMutableArray
         self.filterFood()
         

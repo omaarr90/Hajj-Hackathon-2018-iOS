@@ -42,6 +42,9 @@ class FoodTypeViewController: UIViewController {
         self.fishImageView.clipsToBounds = true
         self.meatImageView.clipsToBounds = true
         
+        let button = UIBarButtonItem(title: "Cancel", style: .done, target: self, action: #selector(dismissSelf))
+        self.navigationItem.rightBarButtonItem = button
+                
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -79,5 +82,9 @@ class FoodTypeViewController: UIViewController {
             self.foodType = .meat
         }
         self.performSegue(withIdentifier: "showFoodSelection", sender: self)
+    }
+    
+    @objc func dismissSelf() {
+        self.dismiss(animated: true, completion: nil)
     }
 }
