@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4C107EC82113DC6100E01C22 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C107EC72113DC6100E01C22 /* EmptyStateView.swift */; };
+		4C107ECA2113EA7400E01C22 /* food-preparing.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C107EC92113EA7400E01C22 /* food-preparing.json */; };
 		4C119D9F2111C7FA00F0536A /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C119D9E2111C7FA00F0536A /* NetworkHelper.swift */; };
 		4C119DA52111D25C00F0536A /* FoodItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C119DA32111D25C00F0536A /* FoodItemCollectionViewCell.swift */; };
 		4C119DA62111D25C00F0536A /* FoodItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C119DA42111D25C00F0536A /* FoodItemCollectionViewCell.xib */; };
@@ -45,13 +46,13 @@
 		4CD8AF3D2113653300E0681B /* HajjColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8AF3C2113653300E0681B /* HajjColor.swift */; };
 		4CD8AF3F21136EEB00E0681B /* fingerprint-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 4CD8AF3E21136EEB00E0681B /* fingerprint-animation.json */; };
 		4CD8AF4121138AC700E0681B /* FoodPrepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8AF4021138AC700E0681B /* FoodPrepViewController.swift */; };
-		4CD8AF4321138B8600E0681B /* food-preparing.json in Resources */ = {isa = PBXBuildFile; fileRef = 4CD8AF4221138B8600E0681B /* food-preparing.json */; };
 		4CD8AF45211393A500E0681B /* FoodTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8AF44211393A500E0681B /* FoodTypeViewController.swift */; };
 		F90D7664D8E4A936503E0F17 /* Pods_Hajj_Hackathon_2018.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B70AEF6C66B6C6B01D1C5907 /* Pods_Hajj_Hackathon_2018.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4C107EC72113DC6100E01C22 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		4C107EC92113EA7400E01C22 /* food-preparing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "food-preparing.json"; sourceTree = "<group>"; };
 		4C119D9E2111C7FA00F0536A /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		4C119DA32111D25C00F0536A /* FoodItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		4C119DA42111D25C00F0536A /* FoodItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodItemCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -91,7 +92,6 @@
 		4CD8AF3C2113653300E0681B /* HajjColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HajjColor.swift; sourceTree = "<group>"; };
 		4CD8AF3E21136EEB00E0681B /* fingerprint-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "fingerprint-animation.json"; sourceTree = "<group>"; };
 		4CD8AF4021138AC700E0681B /* FoodPrepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPrepViewController.swift; sourceTree = "<group>"; };
-		4CD8AF4221138B8600E0681B /* food-preparing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "food-preparing.json"; sourceTree = "<group>"; };
 		4CD8AF44211393A500E0681B /* FoodTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTypeViewController.swift; sourceTree = "<group>"; };
 		6E801920AB68B608586AA045 /* Pods-Hajj-Hackathon-2018.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hajj-Hackathon-2018.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hajj-Hackathon-2018/Pods-Hajj-Hackathon-2018.debug.xcconfig"; sourceTree = "<group>"; };
 		95ADD3DF42AB4996975FA6F6 /* Pods-Hajj-Hackathon-2018.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hajj-Hackathon-2018.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hajj-Hackathon-2018/Pods-Hajj-Hackathon-2018.release.xcconfig"; sourceTree = "<group>"; };
@@ -178,7 +178,7 @@
 		4C703AD12110EF5800A25563 /* Hajj-Hackathon-2018 */ = {
 			isa = PBXGroup;
 			children = (
-				4CD8AF4221138B8600E0681B /* food-preparing.json */,
+				4C107EC92113EA7400E01C22 /* food-preparing.json */,
 				4CD8AF3E21136EEB00E0681B /* fingerprint-animation.json */,
 				4C119D9B2111C7B500F0536A /* Utils */,
 				4C703AD22110EF5800A25563 /* AppDelegate.swift */,
@@ -332,7 +332,7 @@
 				4C119DA62111D25C00F0536A /* FoodItemCollectionViewCell.xib in Resources */,
 				4C703ADD2110EF5900A25563 /* LaunchScreen.storyboard in Resources */,
 				4C703B022111A68400A25563 /* PerosnCollectionViewCell.xib in Resources */,
-				4CD8AF4321138B8600E0681B /* food-preparing.json in Resources */,
+				4C107ECA2113EA7400E01C22 /* food-preparing.json in Resources */,
 				4C31BC48211226CE007B35C7 /* VendingMachineCollectionViewCell.xib in Resources */,
 				4C703ADA2110EF5900A25563 /* Assets.xcassets in Resources */,
 				4C703AD82110EF5800A25563 /* Main.storyboard in Resources */,
@@ -591,7 +591,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3S846UE5F8;
 				INFOPLIST_FILE = "Hajj-Hackathon-2018/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.omaarr90.Hajj-Hackathon-2018";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -607,7 +610,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3S846UE5F8;
 				INFOPLIST_FILE = "Hajj-Hackathon-2018/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.omaarr90.Hajj-Hackathon-2018";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

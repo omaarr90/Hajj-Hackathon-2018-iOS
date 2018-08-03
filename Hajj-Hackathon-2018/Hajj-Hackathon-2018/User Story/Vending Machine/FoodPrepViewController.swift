@@ -28,6 +28,10 @@ class FoodPrepViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
+        self.animationContentView.layer.cornerRadius = 300
+        self.animationContentView.clipsToBounds = true
+        self.animationContentView.layer.borderWidth = 8
+        self.animationContentView.layer.borderColor = UIColor.hajjTintColor.cgColor
         self.animationView = self.loadingView()
     }
 
@@ -52,13 +56,13 @@ class FoodPrepViewController: UIViewController {
         self.animationContentView.addSubview(lotView)
         
         //setupConstraints
-        let leadingConstraint = NSLayoutConstraint(item: lotView, attribute: .leading, relatedBy: .equal, toItem: self.animationContentView, attribute: .leading, multiplier: 1.0, constant: 0.0)
+        let leadingConstraint = NSLayoutConstraint(item: lotView, attribute: .leading, relatedBy: .equal, toItem: self.animationContentView, attribute: .leading, multiplier: 1.0, constant: 0)
         
-        let trailingConstraint = NSLayoutConstraint(item: lotView, attribute: .trailing, relatedBy: .equal, toItem: self.animationContentView, attribute: .trailing, multiplier: 1.0, constant: 0.0)
+        let trailingConstraint = NSLayoutConstraint(item: lotView, attribute: .trailing, relatedBy: .equal, toItem: self.animationContentView, attribute: .trailing, multiplier: 1.0, constant: 0)
         
-        let topConstraint = NSLayoutConstraint(item: lotView, attribute: .top, relatedBy: .equal, toItem: self.animationContentView, attribute: .top, multiplier: 1.0, constant: 0.0)
+        let topConstraint = NSLayoutConstraint(item: lotView, attribute: .top, relatedBy: .equal, toItem: self.animationContentView, attribute: .top, multiplier: 1.0, constant: 0)
         
-        let bottomConstraint = NSLayoutConstraint(item: lotView, attribute: .bottom, relatedBy: .equal, toItem: self.animationContentView, attribute: .bottom, multiplier: 1.0, constant: 0.0)
+        let bottomConstraint = NSLayoutConstraint(item: lotView, attribute: .bottom, relatedBy: .equal, toItem: self.animationContentView, attribute: .bottom, multiplier: 1.0, constant: 0)
                 
         NSLayoutConstraint.activate([leadingConstraint, trailingConstraint, topConstraint, bottomConstraint])
         

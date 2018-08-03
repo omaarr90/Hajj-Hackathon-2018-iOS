@@ -223,17 +223,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kuv-pR-iLN">
-                                <rect key="frame" x="34" y="262" width="700" height="500"/>
+                                <rect key="frame" x="84" y="212" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="700" id="GZ9-cD-Dqw"/>
-                                    <constraint firstAttribute="height" constant="500" id="sqf-Ss-gdp"/>
+                                    <constraint firstAttribute="width" constant="600" id="GZ9-cD-Dqw"/>
+                                    <constraint firstAttribute="height" constant="600" id="sqf-Ss-gdp"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preparing Food..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHy-qM-aqS">
-                                <rect key="frame" x="128" y="792" width="513.5" height="86"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="72"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="211" y="842" width="347" height="57.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                <color key="textColor" red="0.63137254901960782" green="0.63137254901960782" blue="0.63137254901960782" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -241,7 +241,7 @@
                         <constraints>
                             <constraint firstItem="fHy-qM-aqS" firstAttribute="top" secondItem="Kuv-pR-iLN" secondAttribute="bottom" constant="30" id="0KV-PL-SO7"/>
                             <constraint firstItem="Kuv-pR-iLN" firstAttribute="centerX" secondItem="hBE-O8-t11" secondAttribute="centerX" id="IWm-RO-DJc"/>
-                            <constraint firstItem="fHy-qM-aqS" firstAttribute="centerX" secondItem="Kuv-pR-iLN" secondAttribute="centerX" id="UxU-sf-Y1h"/>
+                            <constraint firstItem="fHy-qM-aqS" firstAttribute="centerX" secondItem="hBE-O8-t11" secondAttribute="centerX" id="w8a-oK-y0P"/>
                             <constraint firstItem="Kuv-pR-iLN" firstAttribute="centerY" secondItem="hBE-O8-t11" secondAttribute="centerY" id="ww7-3u-YFS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Lf3-du-nKq"/>

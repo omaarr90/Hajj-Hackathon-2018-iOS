@@ -96,10 +96,15 @@ class VendingMachineCollectionViewController: UICollectionViewController, UIColl
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        setupInitialViewState()
+        super.viewWillAppear(animated)
+//        setupInitialViewState()
         
         getFoodList()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setupInitialViewState()
     }
     
     func didFinishPreparingFood(controller: FoodPrepViewController) {
@@ -114,7 +119,7 @@ class VendingMachineCollectionViewController: UICollectionViewController, UIColl
         ApiManager.shared.getMachineInfo(for: self.vendingMachine.id) { (vendingMachine, error) in
             if let vm = vendingMachine {
                 self.foodList = vm.foodList.mutableCopy() as! NSMutableArray
-                self.endLoading()
+                self.endLoading(animated: true, error: error, completion: nil)
                 self.filterFood()
             }
         }
