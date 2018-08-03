@@ -27,12 +27,14 @@ extension UIColor {
         )
     }
     
-    class var chickenColor: UIColor { get {return UIColor(rgb: 0xdec7e9)}}
+    class var chickenColor: UIColor { get {return UIColor(rgb: 0xdec7a9)}}
     class var vagenColor: UIColor { get {return UIColor(rgb: 0xa6d8de)}}
     class var fishColor: UIColor { get {return UIColor(rgb: 0xa9c6de)}}
     class var meatColor: UIColor { get {return UIColor(rgb: 0xdeb3a9)}}
-    class var hajjTintColor: UIColor { get {return UIColor(rgb: 0x8e8e8e)}}
-    
+    class var hajjTintColor: UIColor { get {return UIColor(rgb: 0xdadada)}}
+    class var HajjPurbleColor: UIColor { get {return UIColor(rgb: 0x8c03ae)}}
+    class var hajjTextColor: UIColor { get {return UIColor(rgb: 0xa1a1a1)}}
+
     class var warning: UIColor { get {return UIColor(rgb: 0xFF9F68)}}
 }
 
@@ -45,5 +47,26 @@ extension UIView {
         animation.type = kCATransitionFade
         animation.duration = duration
         layer.add(animation, forKey: kCATransitionFade)
+    }
+}
+
+extension UIImageView {
+    func downloadedFrom(url: URL, contentMode mode: UIViewContentMode = .scaleAspectFit) {
+        contentMode = mode
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard
+                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
+                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
+                let data = data, error == nil,
+                let image = UIImage(data: data)
+                else { return }
+            DispatchQueue.main.async() {
+                self.image = image
+            }
+            }.resume()
+    }
+    func downloadedFrom(link: String, contentMode mode: UIViewContentMode = .scaleAspectFit) {
+        guard let url = URL(string: link) else { return }
+        downloadedFrom(url: url, contentMode: mode)
     }
 }

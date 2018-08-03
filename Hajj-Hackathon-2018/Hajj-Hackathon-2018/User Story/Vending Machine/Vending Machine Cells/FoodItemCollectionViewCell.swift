@@ -17,9 +17,14 @@ class FoodItemCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.contentView.backgroundColor = .orange
-        self.contentView.layer.cornerRadius = 10.0
-        self.contentView.clipsToBounds = true
+        self.imageView.layer.cornerRadius = 80
+        self.imageView.clipsToBounds = true
+        self.imageView.layer.borderWidth = 5.0
+        
+        self.titleLabel.textColor = UIColor.hajjTextColor
+        self.weightLabel.textColor = UIColor.hajjTextColor
+        self.caloriesLabel.textColor = UIColor.hajjTextColor
+
     }
 
 }

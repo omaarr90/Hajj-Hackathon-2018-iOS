@@ -12,13 +12,22 @@ import StatefulViewController
 
 private let reuseIdentifier = "FoodItemCollectionViewCell"
 
-class VendingMachineCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, CLLocationManagerDelegate, StatefulViewController, FoodPrepViewControllerDelegate {
+enum SelectionType {
+    case chicken
+    case seafood
+    case vagen
+    case meat
+}
+
+class VendingMachineCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, CLLocationManagerDelegate, StatefulViewController, StatefulPlaceholderView, FoodPrepViewControllerDelegate {
     
     
     var vendingMachine: VendingMachine!
     var locationManager: CLLocationManager!
     var foodList: NSMutableArray!
-    
+    var filterdFoodList =  [FoodItem]()
+    var foodType: SelectionType!
+
     var hajjLoadingView: UILabel {
         get {
             let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
@@ -37,12 +46,11 @@ class VendingMachineCollectionViewController: UICollectionViewController, UIColl
         }
     }
 
-    var hajjEmptyView: UILabel {
+    var hajjEmptyView: EmptyStateView {
         get {
-            let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
-            label.text = "No Food At The Moment"
-            label.textAlignment = .center
-            return label
+            let emptyView = EmptyStateView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+            emptyView.image = UIImage(named: "empty")
+            return emptyView
         }
     }
 
@@ -70,7 +78,22 @@ class VendingMachineCollectionViewController: UICollectionViewController, UIColl
         errorView = self.hajjErrorView
         emptyView = self.hajjEmptyView
         
+        
+        self.collectionView?.backgroundView = self.emptyView
+        
         self.foodList = self.vendingMachine.foodList.mutableCopy() as! NSMutableArray
+        self.filterFood()
+        
+        switch self.foodType! {
+        case .chicken:
+            self.navigationController?.navigationBar.barTintColor = UIColor.chickenColor
+        case .seafood:
+            self.navigationController?.navigationBar.barTintColor = UIColor.fishColor
+        case .vagen:
+            self.navigationController?.navigationBar.barTintColor = UIColor.vagenColor
+        case .meat:
+            self.navigationController?.navigationBar.barTintColor = UIColor.meatColor
+        }
         
     }
     
@@ -93,10 +116,42 @@ class VendingMachineCollectionViewController: UICollectionViewController, UIColl
         ApiManager.shared.getMachineInfo(for: self.vendingMachine.id) { (vendingMachine, error) in
             if let vm = vendingMachine {
                 self.foodList = vm.foodList.mutableCopy() as! NSMutableArray
-                self.endLoading(animated: true, error: error, completion: nil)
-                self.collectionView?.reloadData()
+                self.endLoading()
+                self.filterFood()
             }
         }
+    }
+    
+    func filterFood()
+    {
+        switch self.foodType! {
+        case .chicken:
+            self.filterdFoodList = self.foodList.filter{ object -> Bool in
+                let item = object as! FoodItem
+                return item.type == "Chicken"
+                } as! [FoodItem]
+            break;
+        case .seafood:
+            self.filterdFoodList = self.foodList.filter{ object -> Bool in
+                let item = object as! FoodItem
+                return item.type == "Fish"
+                } as! [FoodItem]
+            break;
+        case .vagen:
+            self.filterdFoodList = self.foodList.filter{ object -> Bool in
+                let item = object as! FoodItem
+                return item.type == "Vegetables"
+                } as! [FoodItem]
+            break;
+        case .meat:
+            self.filterdFoodList = self.foodList.filter{ object -> Bool in
+                let item = object as! FoodItem
+                return item.type == "Meat"
+                } as! [FoodItem]
+            break;
+        }
+        
+        self.collectionView?.reloadData()
     }
     
     @objc func showSupplyPage() {
@@ -104,7 +159,7 @@ class VendingMachineCollectionViewController: UICollectionViewController, UIColl
     }
     
     func hasContent() -> Bool {
-        return self.foodList.count > 0
+        return self.filterdFoodList.count > 0
     }
     // MARK: - Navigation
 
@@ -135,22 +190,41 @@ extension VendingMachineCollectionViewController {
     
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.foodList.count
+        return self.filterdFoodList.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! FoodItemCollectionViewCell
         
         // Configure the cell
-        cell.titleLabel.text = (self.foodList[indexPath.item] as! FoodItem).nameEn as String
-        cell.weightLabel.text = "\((self.foodList[indexPath.item] as! FoodItem).weight as! Int) g"
-        cell.caloriesLabel.text = "\((self.foodList[indexPath.item] as! FoodItem).calories as! Int) Kcal"
+        cell.titleLabel.text = self.filterdFoodList[indexPath.item].nameEn as String
+        cell.weightLabel.text = "\(self.filterdFoodList[indexPath.item].weight as! Int) g"
+        cell.caloriesLabel.text = "\(self.filterdFoodList[indexPath.item].calories as! Int) Kcal"
+        
+        switch self.foodType! {
+        case .chicken:
+            cell.imageView.layer.borderColor = UIColor.chickenColor.cgColor
+            cell.imageView.tintColor = UIColor.chickenColor
+        case .vagen:
+            cell.imageView.layer.borderColor = UIColor.vagenColor.cgColor
+            cell.imageView.tintColor = UIColor.vagenColor
+        case .seafood:
+            cell.imageView.layer.borderColor = UIColor.fishColor.cgColor
+            cell.imageView.tintColor = UIColor.fishColor
+        case .meat:
+            cell.imageView.layer.borderColor = UIColor.meatColor.cgColor
+            cell.imageView.tintColor = UIColor.meatColor
+        }
+        
+        if let url = URL(string: self.filterdFoodList[indexPath.item].pictureUrl as String) {
+            cell.imageView.downloadedFrom(url: url)
+        }
         return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //
-        let foodItem = self.foodList[indexPath.item] as! FoodItem
+        let foodItem = self.filterdFoodList[indexPath.item]
         let foodId = foodItem.id
         ApiManager.shared.withdraw(food: foodId, fromMachine: self.vendingMachine.id, customerId: 1) {  error in
             if let _ = error {
@@ -160,6 +234,7 @@ extension VendingMachineCollectionViewController {
                     let foodItemToDelete = item as! FoodItem
                     if foodItemToDelete.id == foodItem.id {
                         self.foodList.remove(item)
+                        self.filterFood()
                     }
                 }
                 self.performSegue(withIdentifier: "showFoodPrep", sender: self)
@@ -200,8 +275,8 @@ extension VendingMachineCollectionViewController {
     
     // MARK: UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = (self.view.frame.size.width / 2) - 20
-        return CGSize(width: width, height: 200)
+        let width = (self.view.frame.size.width / 2) - 10
+        return CGSize(width: width, height: 300)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat
@@ -211,6 +286,6 @@ extension VendingMachineCollectionViewController {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets
     {
-        return UIEdgeInsets(top: 20, left: 5, bottom: 20, right: 5)
+        return UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
     }
 }

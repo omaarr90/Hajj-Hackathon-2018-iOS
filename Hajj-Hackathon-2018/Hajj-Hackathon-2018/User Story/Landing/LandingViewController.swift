@@ -38,7 +38,7 @@ class LandingViewController: UIViewController {
         self.titleLabel.fadeTransition(0.2)
         self.timer = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { (timer) in
             self.titleLabel.text = self.itemList[self.currentIndex]
-            self.titleLabel.textColor = .black
+//            self.titleLabel.textColor = .black
             self.currentIndex = self.currentIndex + 1
             if self.currentIndex == 8 {
                 self.currentIndex = 0

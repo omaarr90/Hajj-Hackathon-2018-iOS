@@ -11,10 +11,12 @@ import UIKit
 class FoodTypeViewController: UIViewController {
 
     
-    @IBOutlet weak var chickenImageView: UIImageView!
-    @IBOutlet weak var vagenImageView: UIImageView!
-    @IBOutlet weak var fishImageView: UIImageView!
-    @IBOutlet weak var meatImageView: UIImageView!
+    @IBOutlet weak var chickenImageView: UIButton!
+    @IBOutlet weak var vagenImageView: UIButton!
+    @IBOutlet weak var fishImageView: UIButton!
+    @IBOutlet weak var meatImageView: UIButton!
+    
+    var foodType: SelectionType!
     
     @IBOutlet var sizeConstraint: [NSLayoutConstraint]!
     
@@ -26,27 +28,25 @@ class FoodTypeViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.title = "Select"
         
-        self.chickenImageView.layer.cornerRadius = 35.0
-        self.vagenImageView.layer.cornerRadius = 35.0
-        self.fishImageView.layer.cornerRadius = 35.0
-        self.meatImageView.layer.cornerRadius = 35.0
+        for constraint in sizeConstraint {
+            constraint.constant = 300
+        }
+
+        self.chickenImageView.layer.cornerRadius = 150.0
+        self.vagenImageView.layer.cornerRadius = 150.0
+        self.fishImageView.layer.cornerRadius = 150.0
+        self.meatImageView.layer.cornerRadius = 150.0
         
         self.chickenImageView.clipsToBounds = true
         self.vagenImageView.clipsToBounds = true
         self.fishImageView.clipsToBounds = true
         self.meatImageView.clipsToBounds = true
         
-        for constraint in sizeConstraint {
-            constraint.constant = 300
-        }
-        
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showFoodList))
-        self.chickenImageView.addGestureRecognizer(tapGesture)
-        self.fishImageView.addGestureRecognizer(tapGesture)
-        self.meatImageView.addGestureRecognizer(tapGesture)
-        self.vagenImageView.addGestureRecognizer(tapGesture)
-
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.barTintColor = UIColor.hajjTextColor
     }
 
     // MARK: - Navigation
@@ -57,12 +57,27 @@ class FoodTypeViewController: UIViewController {
         // Pass the selected object to the new view controller.
         if let destinationVC = segue.destination as? VendingMachineCollectionViewController {
             destinationVC.vendingMachine = self.vendingMachine
+            destinationVC.foodType = foodType
         }
     }
     
-    @objc func showFoodList()
-    {
+    
+    @IBAction func showFoodSelection(_ sender: UIButton) {
+        if sender == self.chickenImageView {
+            self.foodType = .chicken
+        }
+        
+        if sender == self.fishImageView {
+            self.foodType = .seafood
+        }
+        
+        if sender == self.vagenImageView {
+            self.foodType = .vagen
+        }
+        
+        if sender == self.meatImageView {
+            self.foodType = .meat
+        }
         self.performSegue(withIdentifier: "showFoodSelection", sender: self)
     }
-
 }

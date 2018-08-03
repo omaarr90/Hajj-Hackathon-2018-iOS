@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C107EC82113DC6100E01C22 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C107EC72113DC6100E01C22 /* EmptyStateView.swift */; };
 		4C119D9F2111C7FA00F0536A /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C119D9E2111C7FA00F0536A /* NetworkHelper.swift */; };
 		4C119DA52111D25C00F0536A /* FoodItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C119DA32111D25C00F0536A /* FoodItemCollectionViewCell.swift */; };
 		4C119DA62111D25C00F0536A /* FoodItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C119DA42111D25C00F0536A /* FoodItemCollectionViewCell.xib */; };
@@ -50,6 +51,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C107EC72113DC6100E01C22 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		4C119D9E2111C7FA00F0536A /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		4C119DA32111D25C00F0536A /* FoodItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		4C119DA42111D25C00F0536A /* FoodItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodItemCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			children = (
 				4C119DA32111D25C00F0536A /* FoodItemCollectionViewCell.swift */,
 				4C119DA42111D25C00F0536A /* FoodItemCollectionViewCell.xib */,
+				4C107EC72113DC6100E01C22 /* EmptyStateView.swift */,
 			);
 			path = "Vending Machine Cells";
 			sourceTree = "<group>";
@@ -432,6 +435,7 @@
 				4C703AD32110EF5800A25563 /* AppDelegate.swift in Sources */,
 				4C119DA52111D25C00F0536A /* FoodItemCollectionViewCell.swift in Sources */,
 				4C703AEC2111A5BA00A25563 /* DetailsViewModel.swift in Sources */,
+				4C107EC82113DC6100E01C22 /* EmptyStateView.swift in Sources */,
 				4C31BC4C21123613007B35C7 /* SupplyFoodViewController.swift in Sources */,
 				4C703AFE2111A68400A25563 /* EmptyCollectionViewCell.swift in Sources */,
 				4C703AFD2111A68400A25563 /* DetailsBaseCollectionViewCell.swift in Sources */,
